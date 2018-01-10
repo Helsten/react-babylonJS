@@ -81,23 +81,23 @@ export default class Scene extends React.Component<SceneProps & React.HTMLAttrib
     }
 
     // Hide the login screen when the scene is ready
-    scene.executeWhenReady(() => {
-        // TODO: add a method callback for when Scene is ready.
-        // console.error('missing action to create state when scene is first ready')
-    })
+    // scene.executeWhenReady(() => {
+    //     // TODO: add a method callback for when Scene is ready.
+    //     // console.error('missing action to create state when scene is first ready')
+    // })
 
     // TODO: Add other PointerEventTypes and keyDown.
-    scene.onPointerObservable.add((evt) => {
-      if (evt.pickInfo.hit && evt.pickInfo.pickedMesh !== undefined) {
-        let mesh = evt.pickInfo.pickedMesh
+    // scene.onPointerObservable.add((evt) => {
+    //   if (evt.pickInfo.hit && evt.pickInfo.pickedMesh !== undefined) {
+    //     let mesh = evt.pickInfo.pickedMesh
 
-        if (typeof this.props.onMeshPicked === 'function') {
-          this.props.onMeshPicked(mesh, scene)
-        } else {
-          console.log('onMeshPicked not being called')
-        }
-      }
-    }, PointerEventTypes.POINTERDOWN)
+    //     if (typeof this.props.onMeshPicked === 'function') {
+    //       this.props.onMeshPicked(mesh, scene)
+    //     } else {
+    //       console.log('onMeshPicked not being called')
+    //     }
+    //   }
+    // }, PointerEventTypes.POINTERDOWN)
 
     // here we are binding to middleware to receive Redux actions.
     let handlers = {
